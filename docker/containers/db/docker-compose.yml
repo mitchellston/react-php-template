@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  db:
+    image: mysql:8.0.32
+    restart: always
+    env_file:
+      - ./config/db.env
+    volumes:
+      - ../data/db:/var/lib/mysql
+    ports:
+      - "3306:3306"
